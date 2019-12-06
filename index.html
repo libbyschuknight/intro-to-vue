@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="">
+  <title>Product App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="nav-bar"></div>
+  <div id="app">
+    <div class="product">
+      <div class="product-image">
+        <img v-bind:src="image" :alt="altText">
+        <!-- can do :src, shorthand for v-bind:src -->
+      </div>
+      <div class="product-info">
+        <h1>{{ product }}</h1> <!-- called an expression -->
+        <a :href="url" target="_blank">This is a link from the Vue Instance</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
