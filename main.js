@@ -12,16 +12,31 @@ var app = new Vue({
     variants: [
       {
         variantId: 2234,
-        variantColor: 'green'
+        variantColor: 'green',
+        variantImage: 'vmSocks-green-onWhite.jpg'
       },
       {
         variantId: 2235,
-        variantColor: 'blue'
+        variantColor: 'blue',
+        variantImage: 'vmSocks-blue-onWhite.jpg'
       }
     ],
     sizes: ['extra-small', 'small', 'medium', 'large'],
     altText: 'A pair of socks',
     url:
-      'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks'
+      'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
+    cart: 0
+  },
+  methods: {
+    // ES6 shorthand for an anonymous function, not all browsers support this though
+    addToCart() {
+      this.cart += 1;
+    },
+    removeFromCart() {
+      this.cart -= 1;
+    },
+    updateProduct: function(variantImage) {
+      this.image = variantImage;
+    }
   }
 });
